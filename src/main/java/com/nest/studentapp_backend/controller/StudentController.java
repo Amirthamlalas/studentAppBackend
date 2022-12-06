@@ -1,6 +1,7 @@
 package com.nest.studentapp_backend.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -12,18 +13,10 @@ public class StudentController {
     }
 
 
-    @GetMapping("/contact")
-    public  String ContactPage(){
-        return  "welcome to Contact Page";
+    @PostMapping("/add")
+    public  String AddStudent(){
+        return  "welcome to add student  Page";
     }
 
-    @GetMapping("/galary")
-    public  String GalaryPage(){
-        return  "welcome to galary";
-    }
 
-    @GetMapping("/home")
-    public  String HomePage(){
-        return  "welcome to Home Page";
-    }
 }
