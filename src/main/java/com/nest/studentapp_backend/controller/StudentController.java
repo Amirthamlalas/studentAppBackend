@@ -36,6 +36,17 @@ public class StudentController {
 
         return (List<Students>) dao.searchStudent(s.getName());
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(value = "/delete",consumes = "application/json",produces = "application/json")
+    public HashMap<String, String> deleteStudent(@RequestBody Students s){
+
+        String id = String.valueOf((s.getId()));
+        dao.deleteStudent(s.getId());
+        HashMap<String,String>map= new HashMap<>();
+        map.put("status","success");
+        return map;
+    }
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/view")
     public List<Students> view(){
